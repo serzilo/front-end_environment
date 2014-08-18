@@ -20,15 +20,25 @@ module.exports = function (grunt) {
                   paths: ["assets/css"]
                 },
                 files: {
-                  "source/css/temp/main.css": "source/css/main.less"
+                  "source/css/temp/main_less.css": "source/css/main.less"
                 }
+            }
+        },
+
+        autoprefixer: {
+            options: {
+                browsers: ['last 3 version', 'ie 8', 'ie 9']
+            },
+            single_file: {
+                src: 'source/css/temp/main_less.css',
+                dest: 'source/css/temp/main_less_prefix.css'
             }
         },
 
         csso: {
             dist: {
                 files: {
-                    'destination/css/main.css': ['source/css/temp/main.css']
+                    'destination/css/main.css': ['source/css/temp/main_less_prefix.css']
                 }
             }
         },
@@ -119,7 +129,7 @@ module.exports = function (grunt) {
 
             less: {
                 files: ['source/css/*.less'],
-                tasks: ['less','csso']
+                tasks: ['less','autoprefixer','csso']
             },
 
            
@@ -140,8 +150,6 @@ module.exports = function (grunt) {
                 files: ['destination/**/*'],
             }
         }
- 
- 
     });
     
     grunt.loadNpmTasks('grunt-contrib-jade');
@@ -149,6 +157,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -156,10 +165,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     
-
-    grunt.registerTask('default', ['jade', 'less',  'csso', 'jshint', 'concat', 'uglify', 'imagemin', 'connect', 'watch']);
-
-
+    grunt.registerTask('default', ['jade', 'less',  'autoprefixer', 'csso', 'jshint', 'concat', 'uglify', 'imagemin', 'connect', 'watch']);
 
     grunt.registerTask('test', ['']);
 };
