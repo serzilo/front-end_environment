@@ -1,4 +1,5 @@
 node_modules
 source/css/temp/
 source/js/temp/
+destination/
 .DS_Store
