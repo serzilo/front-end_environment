@@ -10,13 +10,14 @@ grunt
 ##В проект включены плагины
 1. jade - https://github.com/gruntjs/grunt-contrib-jade
 2. less - https://github.com/gruntjs/grunt-contrib-less
-3. csso - https://github.com/t32k/grunt-csso
-4. jshint - https://github.com/gruntjs/grunt-contrib-jshint
-5. concat - https://github.com/gruntjs/grunt-contrib-concat
-6. uglify - https://github.com/gruntjs/grunt-contrib-uglify
-7. imagemin - https://github.com/gruntjs/grunt-contrib-imagemin
-8. connect - https://github.com/gruntjs/grunt-contrib-connect
-9. watch - https://github.com/gruntjs/grunt-contrib-watch
+3. autoprefixer - https://github.com/nDmitry/grunt-autoprefixer
+4. csso - https://github.com/t32k/grunt-csso
+5. jshint - https://github.com/gruntjs/grunt-contrib-jshint
+6. concat - https://github.com/gruntjs/grunt-contrib-concat
+7. uglify - https://github.com/gruntjs/grunt-contrib-uglify
+8. imagemin - https://github.com/gruntjs/grunt-contrib-imagemin
+9. connect - https://github.com/gruntjs/grunt-contrib-connect
+10. watch - https://github.com/gruntjs/grunt-contrib-watch
 
 ##Папки проекта
 Исходники (source):
