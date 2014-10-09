@@ -5,7 +5,9 @@
 2. npm install
 
 ##Запуск
-grunt
+grunt - запуск основных тасков
+
+grunt screens - создание скриншотов проекта
 
 ##В проект включены плагины
 1. jade - https://github.com/gruntjs/grunt-contrib-jade
@@ -18,6 +20,8 @@ grunt
 8. imagemin - https://github.com/gruntjs/grunt-contrib-imagemin
 9. connect - https://github.com/gruntjs/grunt-contrib-connect
 10. watch - https://github.com/gruntjs/grunt-contrib-watch
+11. pageres - https://github.com/sindresorhus/grunt-pageres
+12. clean - https://github.com/gruntjs/grunt-contrib-clean
 
 ##Папки проекта
 Исходники (source):
@@ -33,6 +37,7 @@ grunt
 2. destination/css - скомпилированные css
 3. destination/img - минифицированные изображения
 4. destination/js - минифицированные js
+5. destination/screens - скриншоты проекта в разных разрешениях
 
 ##Дополнительно
 При запуске окружения, стартует локальный сервер по адресу http://localhost:3000/
