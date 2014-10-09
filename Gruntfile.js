@@ -106,6 +106,20 @@ module.exports = function (grunt) {
                 }
             }
          },
+
+        pageres: {
+            spaces: {
+                options: {
+                    url: 'spaces.ru',
+                    sizes: ['1200x800', '800x600', '600x500', '320x480'],
+                    dest: 'destination/screens/'
+                }
+            }
+        },
+
+        clean: {
+            test: ['destination/screens/**']
+        },
         
         /*
         cssmin: {
@@ -164,8 +178,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-remove-logging');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.loadNpmTasks('grunt-pageres');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     
     grunt.registerTask('default', ['jade', 'less',  'autoprefixer', 'csso', 'jshint', 'concat', 'uglify', 'imagemin', 'connect', 'watch']);
 
-    grunt.registerTask('test', ['']);
+    grunt.registerTask('screens', ['clean', 'pageres']);
 };
